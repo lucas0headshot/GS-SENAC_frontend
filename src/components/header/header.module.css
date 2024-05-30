@@ -1,0 +1,25 @@
+
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    background-color: black; 
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+.header a {
+    color: white; 
+    text-decoration: none; 
+    padding: 10px 20px; 
+    transition: color 0.3s ease; 
+}
+
+.header a:hover {
+    color: rgb(64, 105, 241); 
+}

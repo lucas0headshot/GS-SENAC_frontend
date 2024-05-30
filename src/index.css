@@ -1,0 +1,19 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    color: black;
+    transition: ease 0.3s;
+}
+
+html, body {
+    height: 100;
+    margin: 0;
+}
+
+#root {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
