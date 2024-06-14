@@ -11,16 +11,16 @@ import Admissao from './pages/admissao/Admissao';
 export default function App() {
   return (
     <>
-      <Header />
       <BrowserRouter>
+      <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="colaboradores" element ={<Colaboradores/>}/>
           <Route path="admissao" element = {<Admissao/>} /> 
           <Route path= "demissao" element = {<Demissao/>}/>
         </Routes>
-      </BrowserRouter>
       <Footer />
+      </BrowserRouter>
     </>
   )
 }

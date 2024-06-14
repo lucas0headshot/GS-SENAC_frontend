@@ -1,25 +1,61 @@
-
 .header {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 30px;
-    background-color: black; 
+    background-color: black;
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-
+    position: fixed;
+    z-index: 1000;
 }
 
 .header a {
-    color: white; 
-    text-decoration: none; 
-    padding: 10px 20px; 
-    transition: color 0.3s ease; 
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: color 0.3s ease;
 }
 
 .header a:hover {
-    color: rgb(64, 105, 241); 
+    color: rgb(64, 105, 241);
+}
+
+.headerTransform {
+    transform: translateX(0%);
+}
+
+@media only screen and (max-width: 900px) {
+    .header {
+        flex-direction: column;
+        transform: translateX(100%);
+        gap: 15px;
+        transition: transform 0.3s ease;
+    }
+
+    .header a {
+        padding: 10px;
+    }
+
+    .headerTransform {
+        transform: translateX(0%);
+    }
+
+    .icon {
+        position: fixed;
+        right: 15px;
+        top: 10px;
+        font-size: 30px;
+        cursor: pointer;
+        color: black;
+        z-index: 9999;
+        transition: color 0.3s ease;
+    }
+
+    .iconActive {
+        color: white;
+    }
 }
