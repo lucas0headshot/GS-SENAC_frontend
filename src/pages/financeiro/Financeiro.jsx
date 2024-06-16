@@ -4,10 +4,11 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 
+
 const Financeiro = () => {
   return (
     <ButtonGroup vertical>
-      <Button>Balanço</Button>
+      <Button>Funcionário</Button>
       <Button>Solicitações</Button>
 
       <DropdownButton
@@ -29,6 +30,7 @@ const Financeiro = () => {
         <Dropdown.Item eventKey="1">Pagamento</Dropdown.Item>
         <Dropdown.Item eventKey="2">Rescisão</Dropdown.Item>
       </DropdownButton>
+      <Button>Balanço</Button>
     </ButtonGroup>
   );
 };
