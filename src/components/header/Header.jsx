@@ -21,7 +21,8 @@ export default function Header() {
         <NavLink to="colaboradores">Colaboradores</NavLink>
         <NavLink to="admissao">Admissão</NavLink>
         <NavLink to="demissao">Demissão</NavLink>
+        <NavLink to="financeiro">Financeiro</NavLink>
       </header>
     </>
   );
-}
+};
