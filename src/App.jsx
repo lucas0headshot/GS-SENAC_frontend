@@ -23,15 +23,14 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="colaboradores" element ={<Colaboradores/>}/>
-            <Route path="admissao" element = {<Admissao/>} /> 
+            <Route path="admissao" element = {<Admissao/>} />
             <Route path= "demissao" element = {<Demissao/>}/>
 
-            <Route path={`${GESTAO_CURSO_PREFIX}/`} element={<HomeGestaoCursos />}>
-              <Route path="cursos" element={<Cursos />} />
-              <Route path="aulas" element={<Aulas />} />
-              <Route path="inscricoes" element={<Inscricoes />} />
-              <Route path="materias" element={<Materias />} />
-            </Route>
+            <Route path={`${GESTAO_CURSO_PREFIX}/`} element={<HomeGestaoCursos />}></Route>
+            <Route path={`${GESTAO_CURSO_PREFIX}/cursos`} element={<Cursos />} />
+            <Route path={`${GESTAO_CURSO_PREFIX}/aulas`} element={<Aulas />} />
+            <Route path={`${GESTAO_CURSO_PREFIX}/inscricoes`} element={<Inscricoes />} />
+            <Route path={`${GESTAO_CURSO_PREFIX}/materias`} element={<Materias />} />
           </Routes>
         <Footer />
       </BrowserRouter>
