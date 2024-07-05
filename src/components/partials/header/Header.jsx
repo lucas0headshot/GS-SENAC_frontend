@@ -20,6 +20,7 @@ export default function Header() {
     useEffect(() => {
     const navs = [
       { name: "Financeiro", path: "/financeiro" },
+      { name: "Gestão de Cursos", path: "/gestao-cursos" },
     ];
     setNavLinks(navs);
   }, []);
@@ -43,7 +44,17 @@ export default function Header() {
           </Dropdown.Menu>
         </Dropdown>
 
-
+        <Dropdown>
+          <Dropdown.Toggle variant="dark" id="dropdown-gestao-cursos">
+            Gestão de Cursos
+          </Dropdown.Toggle>
+          <Dropdown.Menu variant="dark" title="Gestão de Cursos">
+            <Dropdown.Item as={NavLink} to={`/gestao-cursos/cursos`}>Cursos</Dropdown.Item>
+            <Dropdown.Item as={NavLink} to={`/gestao-cursos/aulas`}>Aulas</Dropdown.Item>
+            <Dropdown.Item as={NavLink} to={`/gestao-cursos/inscricoes`}>Inscrições</Dropdown.Item>
+            <Dropdown.Item as={NavLink} to={`/gestao-cursos/materias`}>Matérias</Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
       </header>
     </>
   );
