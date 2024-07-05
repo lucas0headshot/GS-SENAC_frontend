@@ -1,3 +1,5 @@
+import { Container } from 'react-bootstrap';
+
 /**
  * @description Home do Módulo de Gestão de Cursos.
  *
@@ -7,7 +9,11 @@
  */
 const HomeGestaoCursos = () => {
     return (
-        <div>Bem-vindo ao módulo de Gestão de Cursos</div>
+        <Container>
+            <h1>Bem-vindo ao módulo de Gestão de Cursos</h1>
+
+            <h2>Este módulo é responsável por gerenciar os cursos, aulas, inscrições e matérias.</h2>
+        </Container>
     )
 }
 
