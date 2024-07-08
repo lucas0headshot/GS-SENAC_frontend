@@ -29,7 +29,7 @@ function FallbackUI() {
         <div>
             <h1>Erro inesperado</h1>
             <p>Desculpe, ocorreu um erro inesperado. Por favor, tente novamente mais tarde.</p>
-            <Button variant='primary' onClick={location.reload()}>Tentar novamente</Button>
+            <Button variant='primary' onClick={() => {location.reload()}}>Tentar novamente</Button>
         </div>
     );
 }
