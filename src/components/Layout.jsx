@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import Header from "./partials/header/Header";
 import Footer from "./partials/footer/Footer";
 import { Container, Row } from "react-bootstrap";
+import ErrorBoundary from "./ErrorBoundary";
 
 /**
  * @description Layout da aplicação
@@ -16,7 +17,9 @@ const Layout = () => {
             <Header />
             <Container className="mt-5">
                 <Row>
-                    <Outlet />
+                    <ErrorBoundary>
+                        <Outlet />
+                    </ErrorBoundary>
                 </Row>
             </Container>
             <Footer />
