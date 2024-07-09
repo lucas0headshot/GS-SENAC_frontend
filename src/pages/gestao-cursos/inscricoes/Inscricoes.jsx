@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import Axios from 'axios';
 import { Button, Container, Table } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import API_PATH from "../../../API_PATH";
+import API_PATH from "../../../../API_PATH";
 
 const Inscricoes = () => {
   const [inscricoes, setInscricoes] = useState([])
