@@ -10,7 +10,6 @@ const Inscricao = () => {
     const [formData, setFormData] = useState({
         inscrito: { id: 0 },
         data: '',
-        status: '',
         valor: 0,
         curso: { id: 0 }
 
@@ -102,18 +101,13 @@ const Inscricao = () => {
                                                     required
                                                 />
                                             </Form.Group>
-                                            <Form.Group controlId="status" as={Col} className="mb-2">
-                                                <Form.Label>Status</Form.Label>
-                                                <Form.Control as="textarea" placeholder="Digite o status da inscrição"  name="status" value={formData.status} onChange={handleChange} required/>
-                                            </Form.Group>
                                         </Row>
                                         <Row className="mb-2">
                                             <Form.Group controlId="inscrito" as={Col} className="mb-2">
                                                 <Form.Label>Inscrito</Form.Label>
                                                 <Form.Control as="select" name="inscrito" value={formData.inscrito.id} required onChange={handleChange}>
                                                     <option value="0" selected disabled>Selecione um Inscrito</option>
-                                                    <option value={52} >string</option>
-                                                    (//TODO: Dar fetch e renderizar Inscritos)
+                                                    <option value={152} >string</option>
                                                 </Form.Control>
                                             </Form.Group>
                                             <Form.Group controlId="valor" as={Col} className="mb-2">
