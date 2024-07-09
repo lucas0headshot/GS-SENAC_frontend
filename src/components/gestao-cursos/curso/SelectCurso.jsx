@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react"
 import { Form, Col } from "react-bootstrap"
-import API_PATH from '../../../API_PATH'
+import API_PATH from "../../../../API_PATH";
 
 const SelectCurso = ({ ...props }) => {
     const [cursos, setCursos] = useState([]);
