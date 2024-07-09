@@ -4,7 +4,7 @@ export default function Footer() {
     return (
         <>
             <footer className={styles.rodape}>
-                <p>© Portal Rh 2024.</p>
+                <p>© Portal GS {new Date().getFullYear()}.</p>
             </footer>
         </>
     )
