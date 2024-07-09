@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react"
 import { Form, Col } from "react-bootstrap"
-import API_PATH from '../../../../API_PATH';
+import API_PATH from '../../../API_PATH'
 
 /**
  * @description Componente c/ SELECT dos Funcionários.
@@ -30,7 +30,7 @@ const SelectFuncionario = ({ ...props }) => {
     return (
         <Form.Group controlId={props.controlId} as={Col} className={props.className}>
             <Form.Label>{props.label}</Form.Label>
-            <Form.Control as="select" name={props.name} value={props.value} props>
+            <Form.Control as="select" name={props.name} value={props.value} onChange={props.onChange}>
                 <option selected disabled value={0}>Selecione um {props.label}</option>
                 {funcionarios.map(funcionario => {
                     return <option key={funcionario.id} value={funcionario.id}>{funcionario.nome}</option>
