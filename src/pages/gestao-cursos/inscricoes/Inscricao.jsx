@@ -2,6 +2,8 @@ import Axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { Col, Container, Row, Card, Form, Button } from 'react-bootstrap';
+import SelectFuncionario from '../../../components/gestao-cursos/curso/SelectFuncionario'
+import SelectCurso from '../../../components/gestao-cursos/curso/SelectCurso';
 
 
 const Inscricao = () => {
@@ -66,12 +68,13 @@ const Inscricao = () => {
         formData.curso.id = parseInt(formData.curso.id);
         try {
             if (id) {
+                console.log('id setado')
                 await Axios.put(`http://localhost:8080/api/inscricoes/${id}`, formData);
             } else {
                 await Axios.post('http://localhost:8080/api/inscricoes', formData);
             }
 
-            navigate.push('/');
+            navigate('/gestao-cursos/inscricoes');
         } catch (err) {
             console.error('Erro ao realizar POST/PUT em inscricao:', err);
         }
@@ -103,31 +106,33 @@ const Inscricao = () => {
                                             </Form.Group>
                                         </Row>
                                         <Row className="mb-2">
-                                            <Form.Group controlId="inscrito" as={Col} className="mb-2">
-                                                <Form.Label>Inscrito</Form.Label>
-                                                <Form.Control as="select" name="inscrito" value={formData.inscrito.id} required onChange={handleChange}>
-                                                    <option value="0" selected disabled>Selecione um Inscrito</option>
-                                                    <option value={152} >string</option>
-                                                </Form.Control>
-                                            </Form.Group>
+                                            <SelectFuncionario 
+                                            controlId="inscrito" 
+                                            className="mb-2" 
+                                            label="Inscrito" 
+                                            name="inscrito" 
+                                            value={formData.inscrito.id}
+                                            onChange={handleChange}/>
                                             <Form.Group controlId="valor" as={Col} className="mb-2">
                                                 <Form.Label>Carga Horária Total</Form.Label>
                                                 <Form.Control type="number" name="valor" required value={formData.valor} onChange={handleChange}/>
                                             </Form.Group>
                                         </Row>
                                         <Row className="mb-2">
-                                            <Form.Group controlId="curso" as={Col} className="mb-2">
-                                            <Form.Control as="select" name="curso" value={formData.curso.id} required onChange={handleChange}>
-                                                    <option value="0" selected disabled>Selecione um Curso</option>
-                                                    <option value={1}>string</option>
-                                            </Form.Control>
-                                            </Form.Group>
+                                            <SelectCurso 
+                                            controlId='curso'
+                                            className='mb-2'
+                                            label='Curso'
+                                            name='curso'
+                                            value={formData.curso.id}
+                                            onChange={handleChange}
+                                             />
                                         </Row>
                                     </Form>
                                 </div>
                             </div>
                         </Card.Body>
-                        <Card.Footer>
+                        <Card.Footer className="justify-content-end d-flex gap-2">
                             <Button variant="primary" type="submit" onClick={handleSubmit}>Salvar</Button>
                             <Button variant="secondary" type="button" onClick={() => {
                                 navigate('/gestao-cursos/inscricoes')
