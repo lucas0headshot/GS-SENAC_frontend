@@ -68,7 +68,6 @@ const Inscricao = () => {
         formData.curso.id = parseInt(formData.curso.id);
         try {
             if (id) {
-                console.log('id setado')
                 await Axios.put(`http://localhost:8080/api/inscricoes/${id}`, formData);
             } else {
                 await Axios.post('http://localhost:8080/api/inscricoes', formData);
