@@ -3,7 +3,6 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Page404 from './pages/Page404';
-import Home from "./pages/home/Home";
 import HomeGestaoCursos from "./pages/gestao-cursos/home/HomeGestaoCursos";
 import Cursos from "./pages/gestao-cursos/cursos/Cursos";
 import Curso from "./pages/gestao-cursos/cursos/Curso";
@@ -26,14 +25,14 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" exact element={<Layout />}>
-          <Route index element={<Home />} />
+          <Route index element={<HomeGestaoCursos />} />
 
-          <Route path={`${GESTAO_CURSO_PREFIX}/`} element={<HomeGestaoCursos />} />
           <Route path={`${GESTAO_CURSO_PREFIX}/cursos`} element={<Cursos />} />
           <Route path={`${GESTAO_CURSO_PREFIX}/cursos/criar`} element={<Curso />} />
           <Route path={`${GESTAO_CURSO_PREFIX}/aulas`} element={<Aulas />} />
           <Route path={`${GESTAO_CURSO_PREFIX}/inscricoes`} element={<Inscricoes />} />
           <Route path={`${GESTAO_CURSO_PREFIX}/inscricoes/criar`} element={<Inscricao />} />
+          <Route path={`${GESTAO_CURSO_PREFIX}/inscricoes/editar/:id`} element={<Inscricao />} />
           <Route path={`${GESTAO_CURSO_PREFIX}/materias`} element={<Materias />} />
         </Route>
         <Route path="*" element={<Page404 />} />
