@@ -3,23 +3,16 @@ import { useState, useEffect } from "react"
 import { Form, Col } from "react-bootstrap"
 import API_PATH from '../../../API_PATH'
 
-/**
- * @description Componente c/ SELECT dos Funcionários.
- *
- * @author Lucas Ronchi <@lucas0headshot>
- *
- * @return {Component}
- */
-const SelectFuncionario = ({ ...props }) => {
-    const [funcionarios, setFuncionarios] = useState([]);
+const SelectCurso = ({ ...props }) => {
+    const [cursos, setCursos] = useState([]);
 
     const fetchFuncionarios = async () => {
-        axios.get(`${API_PATH}funcionario`)
+        axios.get(`${API_PATH}cursos`)
             .then(response => {
-                setFuncionarios(response.data.content);
+                setCursos(response.data.content);
             })
             .catch(err => {
-                console.error('Erro ao realizar GET em Funcionários:', err);
+                console.error('Erro ao realizar GET em Cursos:', err);
             });
     };
 
@@ -32,12 +25,12 @@ const SelectFuncionario = ({ ...props }) => {
             <Form.Label>{props.label}</Form.Label>
             <Form.Control as="select" name={props.name} value={props.value} onChange={props.onChange}>
                 <option selected disabled value={0}>Selecione um {props.label}</option>
-                {funcionarios.map(funcionario => {
-                    return <option key={funcionario.id} value={funcionario.id}>{funcionario.nome}</option>
+                {cursos.map(curso => {
+                    return <option key={curso.id} value={curso.id}>{curso.nome}</option>
                 })}
             </Form.Control>
         </Form.Group>
     )
 }
 
-export default SelectFuncionario
+export default SelectCurso;

@@ -1,3 +1,6 @@
+import { Button, Image, Row } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
+
 /**
  * @description Home do Módulo de Gestão de Cursos.
  *
@@ -6,8 +9,22 @@
  * @return {React.ReactElement}
  */
 const HomeGestaoCursos = () => {
+    const navigate = useNavigate();
+
+    const handleNavigate = () => {
+        navigate('/gestao-cursos/cursos');
+    }
+
     return (
-        <div>Bem-vindo ao módulo de Gestão de Cursos</div>
+        <div>
+            <Row className="justify-content-center">
+                <Image src="public/images/banner.png" className="w-75"></Image>
+            </Row>
+
+            <h1>Olá, bem vindo ao Portal GS!</h1>
+            <p>Para consultar ou cadastrar cursos, clique no botão a baixo</p>
+            <Button variant="primary" onClick={handleNavigate}>Cadastrar</Button>
+        </div>
     )
 }
 
