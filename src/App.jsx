@@ -3,7 +3,6 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Page404 from './pages/Page404';
-import Home from "./pages/home/Home";
 import HomeGestaoCursos from "./pages/gestao-cursos/home/HomeGestaoCursos";
 import Cursos from "./pages/gestao-cursos/cursos/Cursos";
 import Curso from "./pages/gestao-cursos/cursos/Curso";
@@ -26,9 +25,8 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" exact element={<Layout />}>
-          <Route index element={<Home />} />
+          <Route index element={<HomeGestaoCursos />} />
 
-          <Route path={`${GESTAO_CURSO_PREFIX}/`} element={<HomeGestaoCursos />} />
           <Route path={`${GESTAO_CURSO_PREFIX}/cursos`} element={<Cursos />} />
           <Route path={`${GESTAO_CURSO_PREFIX}/cursos/criar`} element={<Curso />} />
           <Route path={`${GESTAO_CURSO_PREFIX}/aulas`} element={<Aulas />} />
