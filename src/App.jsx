@@ -34,6 +34,7 @@ export default function App() {
           <Route path={`${GESTAO_CURSO_PREFIX}/aulas`} element={<Aulas />} />
           <Route path={`${GESTAO_CURSO_PREFIX}/inscricoes`} element={<Inscricoes />} />
           <Route path={`${GESTAO_CURSO_PREFIX}/inscricoes/criar`} element={<Inscricao />} />
+          <Route path={`${GESTAO_CURSO_PREFIX}/inscricoes/editar/:id`} element={<Inscricao />} />
           <Route path={`${GESTAO_CURSO_PREFIX}/materias`} element={<Materias />} />
         </Route>
         <Route path="*" element={<Page404 />} />
