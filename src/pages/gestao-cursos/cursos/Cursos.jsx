@@ -37,20 +37,6 @@ const Cursos = () => {
             });
     };
 
-    const handleExcluir = async (id) => {
-        if (confirm("Deseja realmente excluir este curso?")) {
-            axios.delete(`${API_PATH}/cursos/${id}`)
-                .then(response => {
-                    if (response.status == 204) {
-                        fetchCursos();
-                    }
-                })
-                .catch(err => {
-                    console.error('Erro ao realizar DELETE em Cursos:', err);
-                });
-        }
-    };
-
     const handleEditar = (id) => {
         navigate(`/gestao-cursos/cursos/editar/${id}`);
     }
@@ -77,32 +63,32 @@ const Cursos = () => {
                             <th>Descrição</th>
                             <th>Coordenador</th>
                             <th>Períodos Inscrições</th>
-                            <th>Qtd Inscritos</th>
                             <th>Ações</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {cursos.map((curso, i) => (
-                            <tr key={i}>
-                                <td>{curso.nome}</td>
-                                <td>{curso.descricao}</td>
-                                <td>{curso.coordenador}</td>
-                                <td>{formatDate(curso.dataInicioInscricao)} - {formatDate(curso.dataFinalInscricao)}</td>
-                                <td>{curso.qtdInscrito}</td>
-                                <td className="text-center">
-                                    <Dropdown>
-                                        <Dropdown.Toggle variant="secondary" id={`dropdown-curso-${curso.id}`}>Ações</Dropdown.Toggle>
-                                        <Dropdown.Menu style={{zIndex: 3}}>
-                                            <Dropdown.Item variant="primary" href={`/gestao-cursos/cursos/materias/${curso.id}`}>Materias</Dropdown.Item>
-                                            <Dropdown.Item variant="secondary" href={`/gestao-cursos/cursos/aulas/${curso.id}`}>Aulas</Dropdown.Item>
-                                            <Dropdown.Item variant="info" href={`/gestao-cursos/cursos/inscricoes/${curso.id}`}>Inscrições</Dropdown.Item>
-                                            <Dropdown.Item variant="warning" onClick={() => handleEditar(curso.id)}>Editar</Dropdown.Item>
-                                            <Dropdown.Item variant="danger" onClick={() => handleExcluir(curso.id)}>Excluir</Dropdown.Item>
-                                        </Dropdown.Menu>
-                                    </Dropdown>
-                                </td>
+                        {!cursos.length ? (
+                            <tr>
+                                <td colSpan="6" className="text-center">Nenhum curso encontrado</td>
                             </tr>
-                        ))}
+                        ) : (
+                            cursos.map((curso, i) => (
+                                <tr key={i}>
+                                    <td>{curso.nome}</td>
+                                    <td>{curso.descricao}</td>
+                                    <td>{curso.coordenador}</td>
+                                    <td>{formatDate(curso.dataInicioInscricao)} - {formatDate(curso.dataFinalInscricao)}</td>
+                                    <td className="text-center">
+                                        <Dropdown>
+                                            <Dropdown.Toggle variant="secondary" id={`dropdown-curso-${curso.id}`}>Ações</Dropdown.Toggle>
+                                            <Dropdown.Menu>
+                                                <Dropdown.Item variant="warning" onClick={() => handleEditar(curso.id)}>Editar</Dropdown.Item>
+                                            </Dropdown.Menu>
+                                        </Dropdown>
+                                    </td>
+                                </tr>
+                            ))
+                        )}
                     </tbody>
                 </Table>
             )}
