@@ -63,6 +63,7 @@ const Cursos = () => {
                             <th>Descrição</th>
                             <th>Coordenador</th>
                             <th>Períodos Inscrições</th>
+                            <th>Períodos</th>
                             <th>Ações</th>
                         </tr>
                     </thead>
@@ -76,8 +77,9 @@ const Cursos = () => {
                                 <tr key={i}>
                                     <td>{curso.nome}</td>
                                     <td>{curso.descricao}</td>
-                                    <td>{curso.coordenador}</td>
+                                    <td>{curso.coordenador.nome}</td>
                                     <td>{formatDate(curso.dataInicioInscricao)} - {formatDate(curso.dataFinalInscricao)}</td>
+                                    <td>{formatDate(curso.dataInicio)} - {formatDate(curso.dataFinal)}</td>
                                     <td className="text-center">
                                         <Dropdown>
                                             <Dropdown.Toggle variant="secondary" id={`dropdown-curso-${curso.id}`}>Ações</Dropdown.Toggle>

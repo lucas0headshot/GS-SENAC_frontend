@@ -156,7 +156,7 @@ const Curso = () => {
                                     <Form.Control type="date" name="dataFinalInscricao" required value={formData.dataFinalInscricao} min={formData.dataInicioInscricao} max={formData.dataInicio} onChange={handleChange}/>
                                 </Form.Group>
                             </Row>
-                            <Card.Footer className="d-flex justify-content-end gap-2">
+                            <Card.Footer className="bg-body d-flex justify-content-end gap-2">
                                 <Button variant="primary" type="submit" onClick={handleSubmit}>Salvar</Button>
                                 <Button variant="secondary" onClick={handleCancel} type="button">Cancelar</Button>
                             </Card.Footer>
