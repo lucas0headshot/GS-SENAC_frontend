@@ -11,8 +11,10 @@ import Aula from './pages/gestao-cursos/aulas/Aula';
 import Inscricoes from "./pages/gestao-cursos/inscricoes/Inscricoes";
 import Inscricao from "./pages/gestao-cursos/inscricoes/Inscricao";
 import Materias from "./pages/gestao-cursos/materias/Materias";
+import Materia from "./pages/gestao-cursos/materias/Materia";
 import Frequencia from './pages/gestao-cursos/frequencia/Frequencia';
 import Frequencias from './pages/gestao-cursos/frequencia/Frequencias';
+
 /**
  * @description Aplicação principal.
  *
