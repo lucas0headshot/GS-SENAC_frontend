@@ -104,7 +104,7 @@ const Curso = () => {
                                     <Form.Label>Nome</Form.Label>
                                     <Form.Control placeholder="Digite o nome" type="text" name="nome" value={formData.nome} onChange={handleChange} required/>
                                 </Form.Group>
-                                <SelectFuncionario controlId="coordenador" onChange={handleChange} label="Coordenador" value={formData.coordenador.id} required name="coordenador" />
+                                <SelectFuncionario controlId="coordenador" onChange={handleChange} label="Coordenador" value={formData.coordenador.id || 0} required name="coordenador" />
                             </Row>
                             <Row className="gap-2">
                                 <Form.Group controlId="descricao" as={Col}>
