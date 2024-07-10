@@ -50,7 +50,7 @@ const Cursos = () => {
             axios.delete(`${API_PATH}cursos/${id}`)
                 .then(response => {
                     if (response.status == 204) {
-                        fetchMaterias();
+                        fetchCursos();
                     }
                 })
                 .catch(err => {
