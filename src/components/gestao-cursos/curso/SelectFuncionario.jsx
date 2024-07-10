@@ -14,7 +14,10 @@ const SelectFuncionario = ({ ...props }) => {
     const [funcionarios, setFuncionarios] = useState([]);
 
     const fetchFuncionarios = async () => {
-        axios.get(`${API_PATH}funcionario`)
+        const params = {
+            size: 10
+        };
+        axios.get(`${API_PATH}funcionario`, params)
             .then(response => {
                 setFuncionarios(response.data.content);
             })
@@ -30,8 +33,8 @@ const SelectFuncionario = ({ ...props }) => {
     return (
         <Form.Group controlId={props.controlId} as={Col} className={props.className}>
             <Form.Label>{props.label}</Form.Label>
-            <Form.Control as="select" name={props.name} value={props.value} onChange={props.onChange}>
-                <option selected disabled value={0}>Selecione um {props.label}</option>
+            <Form.Control as="select" required={props.required} name={props.name} value={props.value} onChange={props.onChange}>
+                <option selected={!props.value ? true : false} disabled value={0}>Selecione um {props.label}</option>
                 {funcionarios.map(funcionario => {
                     return <option key={funcionario.id} value={funcionario.id}>{funcionario.nome}</option>
                 })}
