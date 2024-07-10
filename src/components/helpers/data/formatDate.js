@@ -8,7 +8,7 @@
  * @return {string}
  */
 const formatDate = (date) => {
-    return new Date(date).toLocaleDateString();
+    return new Date(`${date} 00:00:00`).toLocaleDateString();
 }
 
 export default formatDate;
