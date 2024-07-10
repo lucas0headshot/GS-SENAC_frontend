@@ -29,6 +29,7 @@ export default function App() {
 
           <Route path={`${GESTAO_CURSO_PREFIX}/cursos`} element={<Cursos />} />
           <Route path={`${GESTAO_CURSO_PREFIX}/cursos/criar`} element={<Curso />} />
+          <Route path={`${GESTAO_CURSO_PREFIX}/cursos/editar/:id`} element={<Curso />} />
           <Route path={`${GESTAO_CURSO_PREFIX}/aulas`} element={<Aulas />} />
           <Route path={`${GESTAO_CURSO_PREFIX}/inscricoes`} element={<Inscricoes />} />
           <Route path={`${GESTAO_CURSO_PREFIX}/inscricoes/criar`} element={<Inscricao />} />
