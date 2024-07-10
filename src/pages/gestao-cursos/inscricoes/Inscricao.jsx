@@ -113,7 +113,7 @@ const Inscricao = () => {
                                             value={formData.inscrito.id}
                                             onChange={handleChange}/>
                                             <Form.Group controlId="valor" as={Col} className="mb-2">
-                                                <Form.Label>Carga Horária Total</Form.Label>
+                                                <Form.Label>Valor</Form.Label>
                                                 <Form.Control type="number" name="valor" required value={formData.valor} onChange={handleChange}/>
                                             </Form.Group>
                                         </Row>
