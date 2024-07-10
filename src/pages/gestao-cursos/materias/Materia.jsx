@@ -37,9 +37,9 @@ const Materia = () => {
                 const formData = {
                     nome: response.data.nome,
                     curso: {
-                        id: response.data.curso.id
+                        id: parseInt(response.data.curso.id)
                     },
-                    id: id,
+                    id: parseInt(id, 10),
                     cargaHoraria: response.data.cargaHoraria
                 }
                 setFormData(formData);
