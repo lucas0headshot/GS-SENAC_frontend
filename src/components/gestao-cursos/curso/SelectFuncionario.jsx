@@ -14,10 +14,7 @@ const SelectFuncionario = ({ ...props }) => {
     const [funcionarios, setFuncionarios] = useState([]);
 
     const fetchFuncionarios = async () => {
-        const params = {
-            size: 10
-        };
-        axios.get(`${API_PATH}funcionario`, params)
+        await axios.get(`${API_PATH}funcionario`)
             .then(response => {
                 setFuncionarios(response.data.content);
             })

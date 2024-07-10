@@ -32,22 +32,6 @@ export default function Header() {
       </div>
       <header className={headerClicked ? `${styles.header} ${styles.headerTransform}` : styles.header}>
         <NavLink to="/"> Home</NavLink>
-        
-        <Dropdown>
-          <Dropdown.Toggle variant="dark" id="dropdown-basic">RH</Dropdown.Toggle>
-          <Dropdown.Menu variant="dark" title="RH">
-            <Dropdown.Item as={Link} to={`/colaboradores`}>Colaboradores</Dropdown.Item>
-            <Dropdown.Item as={Link} to={`/admissao`}>Admissão</Dropdown.Item>
-            <Dropdown.Item as={Link} to={`/demissao`}>Demissão</Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
-
-        <Dropdown>
-          <Dropdown.Toggle variant="dark" id="dropdown-basic">Financeiro</Dropdown.Toggle>
-          <Dropdown.Menu variant="dark" title="Financeiro">
-            <Dropdown.Item as={Link} to={`/financeiro`}>  Financeiro </Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
 
         <Dropdown>
           <Dropdown.Toggle variant="dark" id="dropdown-gestao-cursos">Gestão de Cursos</Dropdown.Toggle>

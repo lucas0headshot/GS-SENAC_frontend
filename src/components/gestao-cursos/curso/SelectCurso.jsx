@@ -3,11 +3,20 @@ import { useState, useEffect } from "react"
 import { Form, Col } from "react-bootstrap"
 import API_PATH from "../../../../API_PATH";
 
+/**
+ * @description Componente c/ SELECT dos Cursos.
+ *
+ * @author Juan Carlos <@JuannCarloss>
+ *
+ * @param {Object} props
+ *
+ * @return {Component}
+ */
 const SelectCurso = ({ ...props }) => {
     const [cursos, setCursos] = useState([]);
 
-    const fetchFuncionarios = async () => {
-        axios.get(`${API_PATH}cursos`)
+    const fetchCursos = async () => {
+        await axios.get(`${API_PATH}cursos`)
             .then(response => {
                 setCursos(response.data.content);
             })
@@ -17,7 +26,7 @@ const SelectCurso = ({ ...props }) => {
     };
 
     useEffect(() => {
-        fetchFuncionarios();
+        fetchCursos();
     }, []);
 
     return (
