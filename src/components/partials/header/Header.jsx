@@ -56,6 +56,8 @@ export default function Header() {
             <Dropdown.Item as={NavLink} to={`/gestao-cursos/aulas`}>Aulas</Dropdown.Item>
             <Dropdown.Item as={NavLink} to={`/gestao-cursos/inscricoes`}>Inscrições</Dropdown.Item>
             <Dropdown.Item as={NavLink} to={`/gestao-cursos/materias`}>Matérias</Dropdown.Item>
+            <Dropdown.Item as={NavLink} to={`/gestao-cursos/frequencias`}>Frequencias</Dropdown.Item>
+
           </Dropdown.Menu>
         </Dropdown>
       </header>
