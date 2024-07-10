@@ -45,6 +45,20 @@ const Cursos = () => {
         navigate("/gestao-cursos/cursos/criar");
     }
 
+    const handleExcluir = async (id) => {
+        if (confirm("Deseja realmente excluir este Curso?")) {
+            axios.delete(`${API_PATH}cursos/${id}`)
+                .then(response => {
+                    if (response.status == 204) {
+                        fetchMaterias();
+                    }
+                })
+                .catch(err => {
+                    console.error('Erro ao realizar DELETE em Cursos:', err);
+                });
+        }
+    };
+
     return (
         <Row>
             <Row className="justify-content-between mb-3">
@@ -85,6 +99,7 @@ const Cursos = () => {
                                             <Dropdown.Toggle variant="secondary" id={`dropdown-curso-${curso.id}`}>Ações</Dropdown.Toggle>
                                             <Dropdown.Menu>
                                                 <Dropdown.Item variant="warning" onClick={() => handleEditar(curso.id)}>Editar</Dropdown.Item>
+                                                <Dropdown.Item as="button" onClick={() => handleExcluir(curso.id)}>Excluir</Dropdown.Item>
                                             </Dropdown.Menu>
                                         </Dropdown>
                                     </td>
