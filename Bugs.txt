@@ -1,2 +1,0 @@
-1 - Layout deve ser responsivo ou seja quando diminuir a tela ela deve criar o menu hamburguer
-2 - Toda vez que clica no menu ele aumenta e diminui criando um " efeito " de ajuste a tela isso não deve acontecer. 
