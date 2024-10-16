@@ -10,10 +10,6 @@
   <img alt="GitHub License" src="https://img.shields.io/github/license/lucas0headshot/GS-SENAC">
 </p>
 
-<h4 align="center">
-	🚧  Gestão de Cursos 🎓 Em andamento 🚀 🚧
-</h4>
-
 <p align="center">
  <a href="#-sobre-o-projeto">Sobre</a> •
  <a href="#-funcionalidades">Funcionalidades</a> •
@@ -21,7 +17,6 @@
  <a href="#-autores">Autores</a> •
  <a href="#user-content--licença">Licença</a>
 </p>
-
 
 ## 💻 Sobre o projeto
 
@@ -44,9 +39,10 @@ Este é o Front-End, veja o Back-End [clicando aqui](https://github.com/lucas0he
 ## 🛠 Tecnologias
 
 - [![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=white)](https://reactjs.org/)
-- [![Bootstrap](https://camo.githubusercontent.com/c6a8e6bb10bfad37e21a5f9aa8cc365819a02ef8997972e10a333ed9be5f47e0/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f626f6f7473747261702d2532333835313146412e7376673f7374796c653d666f722d7468652d6261646765266c6f676f3d626f6f747374726170266c6f676f436f6c6f723d7768697465)](https://react-bootstrap.netlify.app/)
-- [![React Router](https://camo.githubusercontent.com/ad45bc29fd15b24972f6b398c887b7cdfd9723cf0d0518ff2b118397e3b13cb0/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f52656163745f526f757465722d4341343234353f7374796c653d666f722d7468652d6261646765266c6f676f3d72656163742d726f75746572266c6f676f436f6c6f723d7768697465)](https://reactrouter.com/en/6.24.0)
+- [![React Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)](https://react-bootstrap.netlify.app/)
+- [![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)](https://reactrouter.com/en/6.24.0)
 - [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
+
 ---
 
 ## 👨‍💻 Autores
